@@ -10,9 +10,9 @@ public class CIS129_KristinBrooks_Board {
     CIS129_KristinBrooks_Row[] rows = new CIS129_KristinBrooks_Row[5];
 
     // constructor
-    public CIS129_KristinBrooks_Board(CIS129_KristinBrooks_Witch[][] boardData) {
-        for (int i = 0; i < boardData.length; i++) {
-            CIS129_KristinBrooks_Witch[] rowData = boardData[i];
+    public CIS129_KristinBrooks_Board(CIS129_KristinBrooks_BoardData boardData) {
+        for (int i = 0; i < boardData.getData().length; i++) {
+            CIS129_KristinBrooks_Witch[] rowData = boardData.getData()[i];
             CIS129_KristinBrooks_Row row = new CIS129_KristinBrooks_Row(rowData);
             rows[i] = row;
         }
