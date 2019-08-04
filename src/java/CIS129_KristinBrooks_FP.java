@@ -15,6 +15,8 @@ public class CIS129_KristinBrooks_FP {
         CIS129_KristinBrooks_Witch witch2 = new CIS129_KristinBrooks_Witch("R");
         CIS129_KristinBrooks_Witch witch4 = new CIS129_KristinBrooks_Witch("G");
 
+        witch1.setShown();
+
         CIS129_KristinBrooks_Witch[] witches = {witch0, witch1, witch2, null, witch4};
 
         CIS129_KristinBrooks_Row row = new CIS129_KristinBrooks_Row(3, witches);
