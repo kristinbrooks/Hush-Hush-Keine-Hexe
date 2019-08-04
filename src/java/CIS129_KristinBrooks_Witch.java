@@ -27,7 +27,7 @@ public class CIS129_KristinBrooks_Witch {
     }
 
     // sets shown when we want it covered by an X
-    public void setShown() {
+    public void hide() {
         shown = false;
     }
 

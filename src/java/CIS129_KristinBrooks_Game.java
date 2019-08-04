@@ -28,10 +28,18 @@ public class CIS129_KristinBrooks_Game {
     // METHODS
     public void play() {
         System.out.println(board);
+        initBoard();
+        System.out.println(board);
 
         CIS129_KristinBrooks_Turn turn = new CIS129_KristinBrooks_Turn();
 
         turn.take();
+    }
 
+    private void initBoard() {
+        // hide the witches
+        for (int i = 0; i < boardData[0].length; i++) {
+            boardData[0][i].hide();
+        }
     }
 }
