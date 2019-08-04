@@ -59,14 +59,32 @@ public class CIS129_KristinBrooks_Turn {
         BufferedReader reader = new BufferedReader(input);
 
         try {
-            System.out.print("You rolled " + roll + ". Enter column numbers 'c1,c2' of the witches you'd like to " +
-                    "shuffle or 'x' to end your turn: ");
-            String locations = reader.readLine();
-            String[] columns = locations.split(",");
-            boardData.shuffle(Integer.parseInt(columns[0]), Integer.parseInt(columns[1]));
+            int count = 0;
+            String shuffleAgain = "y";
+
+            System.out.print("You rolled " + roll + ". You can shuffle up to 5 times.");
+            while (shuffleAgain.compareToIgnoreCase("y") == 0 && (count < 5)) {
+                System.out.println("Enter column numbers 'c1,c2' of the witches you'd like to shuffle: ");
+                String locations = reader.readLine();
+                String[] columns = locations.split(",");
+                boardData.shuffle(Integer.parseInt(columns[0]), Integer.parseInt(columns[1]));
+                count += 1;
+                if (count < 5) {
+                    System.out.print("Would you like to shuffle again? (y/n) ");
+                    shuffleAgain = reader.readLine();
+                    while (!isShuffleAgainInputValid(shuffleAgain)) {
+                        System.out.print("Invalid input. Please enter 'y' or 'n': ");
+                        shuffleAgain = reader.readLine();
+                    }
+                }
+            }
         } catch (IOException e) {
             System.out.println("Error reading from user.");
         }
+    }
+
+    private Boolean isShuffleAgainInputValid(String answer) {
+        return (answer.compareToIgnoreCase("y") == 0 || answer.compareToIgnoreCase("n") == 0);
     }
 
     private String rollDie() {
