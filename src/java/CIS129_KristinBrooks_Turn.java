@@ -31,8 +31,6 @@ public class CIS129_KristinBrooks_Turn {
             guessTurn(roll);
         }
         board.display();
-
-
     }
 
     private void guessTurn(String roll) {
