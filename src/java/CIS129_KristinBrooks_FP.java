@@ -21,7 +21,7 @@ public class CIS129_KristinBrooks_FP {
 
         CIS129_KristinBrooks_Row row = new CIS129_KristinBrooks_Row(3, witches);
 
-        System.out.print(row.toString());
+        System.out.print(row);
     }
 
 }

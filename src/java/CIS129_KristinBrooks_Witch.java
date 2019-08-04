@@ -15,7 +15,9 @@ public class CIS129_KristinBrooks_Witch {
         this.color = color;
     }
 
-    // methods
+    // METHODS
+
+    // tells what should be printed in a space that has a witch in it
     public String toString() {
         if (shown) {
             return color;
@@ -24,6 +26,7 @@ public class CIS129_KristinBrooks_Witch {
         }
     }
 
+    // sets shown when we want it covered by an X
     public void setShown() {
         shown = false;
     }

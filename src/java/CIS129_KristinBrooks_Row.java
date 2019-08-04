@@ -16,14 +16,17 @@ public class CIS129_KristinBrooks_Row {
         this.witches = witches;
     }
 
-    // methods
+    // METHODS
+
+    // make string with the row number and witches or blank spaces
     public String toString() {
-
+        // create instance of StringBuffer
         StringBuffer out = new StringBuffer();
-
+        // put the row number at the beginning of the string
         out.append("|"
                 + rowNum
                 + "|");
+        // loop to finish the string
         for (int i = 0; i < witches.length; i++) {
             if (witches[i] == null) {
                 out.append(" ");
