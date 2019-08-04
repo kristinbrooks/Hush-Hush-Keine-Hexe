@@ -18,7 +18,7 @@ public class CIS129_KristinBrooks_FP {
 //        InputStreamReader input = new InputStreamReader(System.in);
 //        BufferedReader reader = new BufferedReader(input);
         // create an instance of the witch
-        CIS129_KristinBrooks_Witch witch = new CIS129_KristinBrooks_Witch("Blue");
+        CIS129_KristinBrooks_Witch witch = new CIS129_KristinBrooks_Witch("Purple");
 
 
         // declarations
