@@ -43,4 +43,27 @@ public class CIS129_KristinBrooks_BoardData {
         witches[witchIndex2].setColor(tempColor);
     }
 
+    public Boolean doesWitchMatch(String color, int columnNumber) {
+        return color.equals(witches[columnNumber - 1].getColor());
+    }
+
+    public void showWitch(int input) {
+        witches[input - 1].show();
+    }
+
+    public void hideWitch(int input) {
+        witches[input - 1].hide();
+    }
+
+    public void moveWitch(int column) {
+        int witchesCurrentRowIndex = 0;
+        int columnIndex = column - 1;
+        for (int currentRowIndex = 0; currentRowIndex < data.length; currentRowIndex++) {
+            if (data[currentRowIndex][columnIndex] != null) {
+                witchesCurrentRowIndex = currentRowIndex;
+            }
+        }
+        data[witchesCurrentRowIndex + 1][columnIndex] = data[witchesCurrentRowIndex][columnIndex];
+        data[witchesCurrentRowIndex][columnIndex] = null;
+    }
 }

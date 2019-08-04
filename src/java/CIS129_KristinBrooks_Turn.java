@@ -10,23 +10,37 @@ import java.util.Random;
 public class CIS129_KristinBrooks_Turn {
     // field declarations
     private CIS129_KristinBrooks_BoardData boardData;
+    private CIS129_KristinBrooks_Board board;
 
     // constructor
     public CIS129_KristinBrooks_Turn(CIS129_KristinBrooks_BoardData boardData) {
         this.boardData = boardData;
+        this.board = new CIS129_KristinBrooks_Board(boardData);
     }
 
     // METHODS
     public void take() {
         String roll = rollDie();
-        roll = "S";
 
         if (roll.equals("S")) {
-            System.out.print("You rolled " + roll + ". Enter column numbers 'c1,c2' to shuffle or 'x' to end your turn: ");
+            System.out.print("You rolled " + roll + ". Enter column numbers 'c1,c2' of the witches you'd like to " +
+                    "shuffle or 'x' to end your turn: ");
             String input = "1,3";
             String[] columns = input.split(",");
             boardData.shuffle(Integer.parseInt(columns[0]), Integer.parseInt(columns[1]));
+        } else {
+            System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
+            int column = 4;
+            boardData.showWitch(column);
+            System.out.println(board);
+            boardData.hideWitch(column);
+            Boolean witchDoesMatch = boardData.doesWitchMatch(roll, column);
+            if (witchDoesMatch) {
+                boardData.moveWitch(column);
+            }
         }
+        System.out.println(board);
+
 
     }
 

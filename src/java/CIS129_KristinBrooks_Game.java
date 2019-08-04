@@ -20,6 +20,7 @@ public class CIS129_KristinBrooks_Game {
 
         turn.take();
 
+        System.out.println("The game has ended.");
         boardData.showAllWitches();
         System.out.println(board);
     }
