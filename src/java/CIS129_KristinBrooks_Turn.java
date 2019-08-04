@@ -5,6 +5,9 @@
  * Due: 8/5/19
  **************************************************************/
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Random;
 
 public class CIS129_KristinBrooks_Turn {
@@ -33,23 +36,39 @@ public class CIS129_KristinBrooks_Turn {
     }
 
     private void guessTurn(String roll) {
-        System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
-        int column = 4;
-        boardData.showWitch(column);
-        board.display();
-        boardData.hideWitch(column);
-        Boolean witchDoesMatch = boardData.doesWitchMatch(roll, column);
-        if (witchDoesMatch) {
-            boardData.moveWitch(column);
+        // create input streams
+        InputStreamReader input = new InputStreamReader(System.in);
+        BufferedReader reader = new BufferedReader(input);
+
+        try {
+            System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
+            int column = Integer.parseInt(reader.readLine());
+            boardData.showWitch(column);
+            board.display();
+            boardData.hideWitch(column);
+            Boolean witchDoesMatch = boardData.doesWitchMatch(roll, column);
+            if (witchDoesMatch) {
+                boardData.moveWitch(column);
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading from user.");
         }
     }
 
     private void shuffleTurn(String roll) {
-        System.out.print("You rolled " + roll + ". Enter column numbers 'c1,c2' of the witches you'd like to " +
-                "shuffle or 'x' to end your turn: ");
-        String input = "1,3";
-        String[] columns = input.split(",");
-        boardData.shuffle(Integer.parseInt(columns[0]), Integer.parseInt(columns[1]));
+        // create input streams
+        InputStreamReader input = new InputStreamReader(System.in);
+        BufferedReader reader = new BufferedReader(input);
+
+        try {
+            System.out.print("You rolled " + roll + ". Enter column numbers 'c1,c2' of the witches you'd like to " +
+                    "shuffle or 'x' to end your turn: ");
+            String locations = reader.readLine();
+            String[] columns = locations.split(",");
+            boardData.shuffle(Integer.parseInt(columns[0]), Integer.parseInt(columns[1]));
+        } catch (IOException e) {
+            System.out.println("Error reading from user.");
+        }
     }
 
     private String rollDie() {

@@ -18,7 +18,10 @@ public class CIS129_KristinBrooks_Game {
 
         CIS129_KristinBrooks_Turn turn = new CIS129_KristinBrooks_Turn(boardData);
 
-        turn.take();
+        boolean keepGoing = true;
+        while (keepGoing) {
+            turn.take();
+        }
 
         System.out.println("The game has ended.");
         boardData.showAllWitches();
