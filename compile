@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+
+rm output/production//Hush-Hush-Keine-Hexe/*.class
+javac src/java/*.java -d output/production//Hush-Hush-Keine-Hexe

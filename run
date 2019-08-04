@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -e
+
+java -cp output/production/Hush-Hush-Keine-Hexe CIS129_KristinBrooks_FP
