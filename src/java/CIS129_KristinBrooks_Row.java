@@ -7,12 +7,10 @@
 
 public class CIS129_KristinBrooks_Row {
     // field declarations
-    int rowNum;
     CIS129_KristinBrooks_Witch[] rowData;
 
     // constructor
-    public CIS129_KristinBrooks_Row(int rowNum, CIS129_KristinBrooks_Witch[] rowData) {
-        this.rowNum = rowNum;
+    public CIS129_KristinBrooks_Row(CIS129_KristinBrooks_Witch[] rowData) {
         this.rowData = rowData;
     }
 
@@ -22,8 +20,6 @@ public class CIS129_KristinBrooks_Row {
     public String toString() {
         // create instance of StringBuffer
         StringBuilder out = new StringBuilder();
-        // put the row number at the beginning of the string
-        out.append("|").append(rowNum).append("|");
         // loop to finish the string
         for (CIS129_KristinBrooks_Witch rowDatum : rowData) {
             if (rowDatum == null) {

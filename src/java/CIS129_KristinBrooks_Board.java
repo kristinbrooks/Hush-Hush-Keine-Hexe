@@ -13,19 +13,21 @@ public class CIS129_KristinBrooks_Board {
     public CIS129_KristinBrooks_Board(CIS129_KristinBrooks_Witch[][] boardData) {
         for (int i = 0; i < boardData.length; i++) {
             CIS129_KristinBrooks_Witch[] rowData = boardData[i];
-            CIS129_KristinBrooks_Row row = new CIS129_KristinBrooks_Row(i, rowData);
+            CIS129_KristinBrooks_Row row = new CIS129_KristinBrooks_Row(rowData);
             rows[i] = row;
         }
     }
 
     // METHODS
 
-    public String toString() {
+    public String printIt() {
         // create instance of StringBuffer
         StringBuilder out = new StringBuilder();
-        //
-        for (CIS129_KristinBrooks_Row row : rows) {
-            out.append(row);
+
+        for (int i = rows.length - 1; i >= 0; i--) {
+            // put the row number at the beginning of the string
+            out.append("|").append(i + 1).append("|");
+            out.append(rows[i]);
             out.append("\n");
         }
         return out.toString();

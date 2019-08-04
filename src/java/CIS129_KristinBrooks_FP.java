@@ -24,7 +24,8 @@ public class CIS129_KristinBrooks_FP {
 
         CIS129_KristinBrooks_Board board = new CIS129_KristinBrooks_Board(boardData);
 
-        System.out.print(board);
+        String boardout = board.printIt();
+        System.out.print(boardout);
     }
 
 }
