@@ -1,3 +1,10 @@
+/***************************************************************
+ * Kristin Brooks
+ * CIS129
+ * Final Project
+ * Due: 8/5/19
+ **************************************************************/
+
 public class CIS129_KristinBrooks_BoardData {
     // field declarations
     private CIS129_KristinBrooks_Witch[][] data = new CIS129_KristinBrooks_Witch[5][5];

@@ -66,6 +66,10 @@ public class CIS129_KristinBrooks_Turn {
             while (shuffleAgain.compareToIgnoreCase("y") == 0 && (count < 5)) {
                 System.out.println("Enter column numbers 'c1,c2' of the witches you'd like to shuffle: ");
                 String locations = reader.readLine();
+                while (!isLocationValid(locations)) {
+                    System.out.print("Input invalid. Please enter 'c1,c2': ");
+                    locations = reader.readLine();
+                }
                 String[] columns = locations.split(",");
                 boardData.shuffle(Integer.parseInt(columns[0]), Integer.parseInt(columns[1]));
                 count += 1;
@@ -81,6 +85,11 @@ public class CIS129_KristinBrooks_Turn {
         } catch (IOException e) {
             System.out.println("Error reading from user.");
         }
+    }
+
+    private boolean isLocationValid(String locations) {
+        String regexPattern = "\\d,\\d";
+        return locations.matches(regexPattern);
     }
 
     private Boolean isShuffleAgainInputValid(String answer) {
