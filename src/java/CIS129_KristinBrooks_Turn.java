@@ -23,25 +23,33 @@ public class CIS129_KristinBrooks_Turn {
         String roll = rollDie();
 
         if (roll.equals("S")) {
-            System.out.print("You rolled " + roll + ". Enter column numbers 'c1,c2' of the witches you'd like to " +
-                    "shuffle or 'x' to end your turn: ");
-            String input = "1,3";
-            String[] columns = input.split(",");
-            boardData.shuffle(Integer.parseInt(columns[0]), Integer.parseInt(columns[1]));
+            shuffleTurn(roll);
         } else {
-            System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
-            int column = 4;
-            boardData.showWitch(column);
-            board.display();
-            boardData.hideWitch(column);
-            Boolean witchDoesMatch = boardData.doesWitchMatch(roll, column);
-            if (witchDoesMatch) {
-                boardData.moveWitch(column);
-            }
+            guessTurn(roll);
         }
         board.display();
 
 
+    }
+
+    private void guessTurn(String roll) {
+        System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
+        int column = 4;
+        boardData.showWitch(column);
+        board.display();
+        boardData.hideWitch(column);
+        Boolean witchDoesMatch = boardData.doesWitchMatch(roll, column);
+        if (witchDoesMatch) {
+            boardData.moveWitch(column);
+        }
+    }
+
+    private void shuffleTurn(String roll) {
+        System.out.print("You rolled " + roll + ". Enter column numbers 'c1,c2' of the witches you'd like to " +
+                "shuffle or 'x' to end your turn: ");
+        String input = "1,3";
+        String[] columns = input.split(",");
+        boardData.shuffle(Integer.parseInt(columns[0]), Integer.parseInt(columns[1]));
     }
 
     private String rollDie() {
