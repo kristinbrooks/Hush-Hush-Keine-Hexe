@@ -12,7 +12,7 @@ public class CIS129_KristinBrooks_Game {
 
     // constructor
     public CIS129_KristinBrooks_Game() {
-        CIS129_KristinBrooks_Witch witch0 = new CIS129_KristinBrooks_Witch("P");
+        CIS129_KristinBrooks_Witch witch0 = new CIS129_KristinBrooks_Witch("O");
         CIS129_KristinBrooks_Witch witch1 = new CIS129_KristinBrooks_Witch("Y");
         CIS129_KristinBrooks_Witch witch2 = new CIS129_KristinBrooks_Witch("R");
         CIS129_KristinBrooks_Witch witch3 = new CIS129_KristinBrooks_Witch("B");
