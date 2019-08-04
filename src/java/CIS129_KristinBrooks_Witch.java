@@ -16,5 +16,8 @@ public class CIS129_KristinBrooks_Witch {
         this.shown = true;
     }
 
+    public String toString() {
+        return color;
+    }
 
 }

@@ -15,20 +15,24 @@ public class CIS129_KristinBrooks_FP {
 
     public static void main(String[] args) {
         // define input steams
-        InputStreamReader input = new InputStreamReader(System.in);
-        BufferedReader reader = new BufferedReader(input);
+//        InputStreamReader input = new InputStreamReader(System.in);
+//        BufferedReader reader = new BufferedReader(input);
+        // create an instance of the witch
+        CIS129_KristinBrooks_Witch witch = new CIS129_KristinBrooks_Witch("Blue");
 
 
         // declarations
 
 
-        try {
-            reader.readLine();
+//        try {
+            System.out.println(witch.toString());
+
+//            reader.readLine();
 
 
-        } catch (IOException e) {
-            System.out.println("Error reading from user");
-        }
+//        } catch (IOException e) {
+//            System.out.println("Error reading from user");
+//        }
 
     }
 
