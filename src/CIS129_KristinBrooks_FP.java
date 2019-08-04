@@ -19,13 +19,14 @@ public class CIS129_KristinBrooks_FP {
 
 
         // declarations
+        int numPlayers;
 
         try{
+            System.out.println("Welcome to Hush, Hush Kleine Hexe.\n");
+            System.out.println("You can have up to 4 players. How many players are there?");
+            numPlayers = Integer.parseInt(reader.readLine());
 
 
-
-
-            reader.readLine();
         } catch (IOException e) {
             System.out.println("Error reading from user");
         }
