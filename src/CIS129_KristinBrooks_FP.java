@@ -7,8 +7,9 @@
  * This program runs the game Hush, Hush Kleine Hexe for 2-4 players.
  **************************************************************************/
 
-import java.io.*;
-import java.util.Random;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class CIS129_KristinBrooks_FP {
 
@@ -19,25 +20,16 @@ public class CIS129_KristinBrooks_FP {
 
 
         // declarations
-        int numPlayers;
 
-        try{
-            System.out.println("Welcome to Hush, Hush Kleine Hexe.\n");
-            System.out.println("You can have up to 4 players. How many players are there?");
-            numPlayers = Integer.parseInt(reader.readLine());
+
+        try {
+            reader.readLine();
 
 
         } catch (IOException e) {
             System.out.println("Error reading from user");
         }
 
-    }
-
-    /*****************FUNCTIONS********************/
-    public static int rollDice() {
-        // create instance of random class
-        Random rand = new Random();
-        return rand.nextInt(6);
     }
 
 }

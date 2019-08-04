@@ -7,13 +7,14 @@
 
 public class CIS129_KristinBrooks_Witch {
     // field declarations
-    private String color;
+    private final String color;
     private Boolean shown;
 
     // constructor
-    public CIS129_KristinBrooks_Witch (String color, Boolean shown) {
+    public CIS129_KristinBrooks_Witch(String color) {
         this.color = color;
-        this.shown = shown;
+        this.shown = true;
     }
+
 
 }
