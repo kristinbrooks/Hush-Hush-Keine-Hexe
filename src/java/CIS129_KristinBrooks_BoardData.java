@@ -38,9 +38,11 @@ public class CIS129_KristinBrooks_BoardData {
     }
 
     public void shuffle(int witchIndex1, int witchIndex2) {
-        String tempColor = witches[witchIndex1].getColor();
-        witches[witchIndex1].setColor(witches[witchIndex2].getColor());
-        witches[witchIndex2].setColor(tempColor);
+        int index1 = witchIndex1 - 1;
+        int index2 = witchIndex2 - 1;
+        String tempColor = witches[index1].getColor();
+        witches[index1].setColor(witches[index2].getColor());
+        witches[index2].setColor(tempColor);
     }
 
     public Boolean doesWitchMatch(String color, int columnNumber) {
