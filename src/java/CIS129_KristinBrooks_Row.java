@@ -18,9 +18,10 @@ public class CIS129_KristinBrooks_Row {
 
     // make string with the row number and witches or blank spaces
     public String toString() {
-        // create instance of StringBuffer
+        // create instance of StringBuilder
         StringBuilder out = new StringBuilder();
-        // loop to finish the string
+
+        // loop to make the row of witches
         for (CIS129_KristinBrooks_Witch rowDatum : rowData) {
             if (rowDatum == null) {
                 out.append(" ");
