@@ -25,15 +25,15 @@ public class CIS129_KristinBrooks_BoardData {
 
     public void hideAllWitches() {
         // hide the witches
-        for (int i = 0; i < witches.length; i++) {
-            witches[i].hide();
+        for (CIS129_KristinBrooks_Witch witch : witches) {
+            witch.hide();
         }
     }
 
     public void showAllWitches() {
         // show the witches
-        for (int i = 0; i < witches.length; i++) {
-            witches[i].show();
+        for (CIS129_KristinBrooks_Witch witch : witches) {
+            witch.show();
         }
     }
 
