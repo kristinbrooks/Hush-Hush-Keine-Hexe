@@ -32,14 +32,14 @@ public class CIS129_KristinBrooks_Turn {
             System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
             int column = 4;
             boardData.showWitch(column);
-            System.out.println(board);
+            board.display();
             boardData.hideWitch(column);
             Boolean witchDoesMatch = boardData.doesWitchMatch(roll, column);
             if (witchDoesMatch) {
                 boardData.moveWitch(column);
             }
         }
-        System.out.println(board);
+        board.display();
 
 
     }

@@ -41,4 +41,7 @@ public class CIS129_KristinBrooks_Board {
         return out.toString();
     }
 
+    public void display() {
+        System.out.println(this);
+    }
 }

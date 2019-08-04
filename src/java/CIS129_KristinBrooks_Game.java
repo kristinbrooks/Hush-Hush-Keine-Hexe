@@ -12,9 +12,9 @@ public class CIS129_KristinBrooks_Game {
 
     // METHODS
     public void play() {
-        System.out.println(board);
+        board.display();
         initBoard();
-        System.out.println(board);
+        board.display();
 
         CIS129_KristinBrooks_Turn turn = new CIS129_KristinBrooks_Turn(boardData);
 
@@ -22,7 +22,7 @@ public class CIS129_KristinBrooks_Game {
 
         System.out.println("The game has ended.");
         boardData.showAllWitches();
-        System.out.println(board);
+        board.display();
     }
 
     private void initBoard() {
