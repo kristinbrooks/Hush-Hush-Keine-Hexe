@@ -28,5 +28,10 @@ public class CIS129_KristinBrooks_Game {
     // METHODS
     public void play() {
         System.out.println(board);
+
+        CIS129_KristinBrooks_Turn turn = new CIS129_KristinBrooks_Turn();
+
+        turn.take();
+
     }
 }
