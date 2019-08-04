@@ -8,12 +8,12 @@
 public class CIS129_KristinBrooks_Row {
     // field declarations
     int rowNum;
-    CIS129_KristinBrooks_Witch[] witches;
+    CIS129_KristinBrooks_Witch[] rowData;
 
     // constructor
-    public CIS129_KristinBrooks_Row(int rowNum, CIS129_KristinBrooks_Witch[] witches) {
+    public CIS129_KristinBrooks_Row(int rowNum, CIS129_KristinBrooks_Witch[] rowData) {
         this.rowNum = rowNum;
-        this.witches = witches;
+        this.rowData = rowData;
     }
 
     // METHODS
@@ -21,17 +21,15 @@ public class CIS129_KristinBrooks_Row {
     // make string with the row number and witches or blank spaces
     public String toString() {
         // create instance of StringBuffer
-        StringBuffer out = new StringBuffer();
+        StringBuilder out = new StringBuilder();
         // put the row number at the beginning of the string
-        out.append("|"
-                + rowNum
-                + "|");
+        out.append("|").append(rowNum).append("|");
         // loop to finish the string
-        for (int i = 0; i < witches.length; i++) {
-            if (witches[i] == null) {
+        for (CIS129_KristinBrooks_Witch rowDatum : rowData) {
+            if (rowDatum == null) {
                 out.append(" ");
             } else {
-                out.append(witches[i]);
+                out.append(rowDatum);
             }
             out.append("|");
         }

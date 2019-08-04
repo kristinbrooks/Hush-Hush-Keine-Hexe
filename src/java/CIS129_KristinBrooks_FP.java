@@ -17,11 +17,14 @@ public class CIS129_KristinBrooks_FP {
 
         witch1.setShown();
 
-        CIS129_KristinBrooks_Witch[] witches = {witch0, witch1, witch2, null, witch4};
+        CIS129_KristinBrooks_Witch[] rowData = {witch0, witch1, witch2, null, witch4};
+        CIS129_KristinBrooks_Witch[][] boardData = {
+                rowData, rowData, rowData, rowData, rowData
+        };
 
-        CIS129_KristinBrooks_Row row = new CIS129_KristinBrooks_Row(3, witches);
+        CIS129_KristinBrooks_Board board = new CIS129_KristinBrooks_Board(boardData);
 
-        System.out.print(row);
+        System.out.print(board);
     }
 
 }
