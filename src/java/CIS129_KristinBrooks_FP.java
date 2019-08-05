@@ -10,8 +10,9 @@
 public class CIS129_KristinBrooks_FP {
 
     public static void main(String[] args) {
+        // creates instance of the game
         CIS129_KristinBrooks_Game game = new CIS129_KristinBrooks_Game();
-
+        // plays the game
         game.play();
     }
 }
