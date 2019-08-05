@@ -3,6 +3,8 @@
  * CIS129
  * Final Project
  * Due: 8/5/19
+ *
+ * This class constructs the board and displays it.
  **************************************************************/
 
 public class CIS129_KristinBrooks_Board {
@@ -19,18 +21,16 @@ public class CIS129_KristinBrooks_Board {
     }
 
     // METHODS
-
-    // create the game board of rows and columns
+    // creates the game board of rows and columns
     public String toString() {
         // create instance of StringBuilder
         StringBuilder out = new StringBuilder();
-
         for (int i = rows.length - 1; i >= 0; i--) {
             // add horizontal lines
             out.append("-------------\n");
-            // put the row number at the beginning of the string
+            // put the row number at the beginning of the row string
             out.append("|").append(i + 1).append("|");
-            // the rows of witches
+            // the rows of witches/spaces
             out.append(rows[i]);
             out.append("\n");
         }
@@ -41,6 +41,7 @@ public class CIS129_KristinBrooks_Board {
         return out.toString();
     }
 
+    // display the board
     public void display() {
         System.out.println(this);
     }
