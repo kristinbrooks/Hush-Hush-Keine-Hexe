@@ -3,6 +3,9 @@
  * CIS129
  * Final Project
  * Due: 8/5/19
+ *
+ * This class creates a row of the board containing some
+ * combination of witches and spaces.
  **************************************************************/
 
 public class CIS129_KristinBrooks_Row {
@@ -15,13 +18,10 @@ public class CIS129_KristinBrooks_Row {
     }
 
     // METHODS
-
-    // make string with the row number and witches or blank spaces
+    // make string row of witches and/or blank spaces
     public String toString() {
         // create instance of StringBuilder
         StringBuilder out = new StringBuilder();
-
-        // loop to make the row of witches
         for (CIS129_KristinBrooks_Witch rowDatum : rowData) {
             if (rowDatum == null) {
                 out.append(" ");
