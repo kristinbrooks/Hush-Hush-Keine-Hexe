@@ -49,7 +49,7 @@ public class CIS129_KristinBrooks_Turn {
                 return true;
             }
             while (!isColumnNumValid(columnNum)) {
-                System.out.print("Invalid input. Please enter a column number from 1-5: ");
+                System.out.print("Invalid input. Please enter a column number from 1 - 5: ");
                 columnNum = reader.readLine();
             }
             int column = Integer.parseInt(columnNum);

@@ -25,7 +25,13 @@ public class CIS129_KristinBrooks_Game {
         System.out.print("Welcome to Hush, Hush Keine Hexe! How many players are there? ");
 
         try {
-            numberPlayers = Integer.parseInt(reader.readLine());
+            String numPlayers = reader.readLine();
+            while (!isNumPlayersValid(numPlayers)) {
+                System.out.print("Invalid input. Please enter a number of players from 1 - 4: ");
+                numPlayers = reader.readLine();
+            }
+            numberPlayers = Integer.parseInt(numPlayers);
+
         } catch (IOException e) {
             System.out.println("Error reading from user.");
         }
@@ -40,6 +46,11 @@ public class CIS129_KristinBrooks_Game {
         System.out.println("The game has ended.");
         boardData.showAllWitches();
         board.display();
+    }
+
+    private boolean isNumPlayersValid(String numPlayers) {
+        String regexPattern = "[1-4]";
+        return numPlayers.matches(regexPattern);
     }
 
     private void gameLoop(int numberPlayers) {
