@@ -44,6 +44,9 @@ public class CIS129_KristinBrooks_Turn {
 
             System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
             String columnNum = reader.readLine();
+            if (showBoardCheat(columnNum)) {
+                return true;
+            }
             while (!isColumnNumValid(columnNum)) {
                 System.out.print("Invalid input. Please enter a column number from 1-5: ");
                 columnNum = reader.readLine();
@@ -121,5 +124,15 @@ public class CIS129_KristinBrooks_Turn {
         Random random = new Random();
         int randomNum = random.nextInt(6);
         return sides[randomNum];
+    }
+
+    private boolean showBoardCheat(String input) {
+        if (input.equals("cheat")) {
+            boardData.showAllWitches();
+            board.display();
+            boardData.hideAllWitches();
+            return true;
+        }
+        return false;
     }
 }

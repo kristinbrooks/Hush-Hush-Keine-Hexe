@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /***************************************************************
  * Kristin Brooks
  * CIS129
@@ -44,9 +46,9 @@ public class CIS129_KristinBrooks_BoardData {
         }
     }
 
-    public void shuffle(int witchIndex1, int witchIndex2) {
-        int index1 = witchIndex1 - 1;
-        int index2 = witchIndex2 - 1;
+    public void shuffle(int column1, int column2) {
+        int index1 = column1 - 1;
+        int index2 = column2 - 1;
         String tempColor = witches[index1].getColor();
         witches[index1].setColor(witches[index2].getColor());
         witches[index2].setColor(tempColor);
@@ -83,5 +85,14 @@ public class CIS129_KristinBrooks_BoardData {
             }
         }
         return false;
+    }
+
+    public void shuffleWitches() {
+        for (int i = 0; i <= 100; i++) {
+            Random random = new Random();
+            int column1 = random.nextInt(4) + 1;
+            int column2 = random.nextInt(4) + 1;
+            shuffle(column1, column2);
+        }
     }
 }

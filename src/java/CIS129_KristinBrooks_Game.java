@@ -30,6 +30,7 @@ public class CIS129_KristinBrooks_Game {
             System.out.println("Error reading from user.");
         }
 
+        System.out.println("Here is the board before it is shuffled.");
         board.display();
         initBoard();
         board.display();
@@ -62,6 +63,7 @@ public class CIS129_KristinBrooks_Game {
     }
 
     private void initBoard() {
+        boardData.shuffleWitches();
         // hide the witches
         boardData.hideAllWitches();
     }
