@@ -27,7 +27,7 @@ public class CIS129_KristinBrooks_Game {
         try {
             String numPlayers = reader.readLine();
             while (!isNumPlayersValid(numPlayers)) {
-                System.out.print("Invalid input. Please enter a number of players from 1 - 4: ");
+                System.out.print("Invalid input. Please enter a number of players from 2 - 4: ");
                 numPlayers = reader.readLine();
             }
             numberPlayers = Integer.parseInt(numPlayers);
@@ -49,7 +49,7 @@ public class CIS129_KristinBrooks_Game {
     }
 
     private boolean isNumPlayersValid(String numPlayers) {
-        String regexPattern = "[1-4]";
+        String regexPattern = "[2-4]";
         return numPlayers.matches(regexPattern);
     }
 
