@@ -3,6 +3,8 @@
  * CIS129
  * Final Project
  * Due: 8/5/19
+ *
+ * This class runs the game.
  **************************************************************/
 
 import java.io.BufferedReader;
@@ -15,6 +17,7 @@ public class CIS129_KristinBrooks_Game {
     CIS129_KristinBrooks_Board board = new CIS129_KristinBrooks_Board(boardData);
 
     // METHODS
+    // plays the game
     public void play() {
         // create input streams
         InputStreamReader input = new InputStreamReader(System.in);
@@ -22,7 +25,7 @@ public class CIS129_KristinBrooks_Game {
 
         int numberPlayers = 1;
 
-        System.out.print("Welcome to Hush, Hush Keine Hexe! How many players are there? ");
+        System.out.print("Welcome to Hush, Hush Kleine Hexe! How many players are there? ");
 
         try {
             String numPlayers = reader.readLine();
@@ -48,11 +51,13 @@ public class CIS129_KristinBrooks_Game {
         board.display();
     }
 
+    // makes sure the user entered 2 -4 players
     private boolean isNumPlayersValid(String numPlayers) {
         String regexPattern = "[2-4]";
         return numPlayers.matches(regexPattern);
     }
 
+    // runs the looping players turns
     private void gameLoop(int numberPlayers) {
         int currentPlayer = 1;
         boolean wonGame = false;
@@ -73,9 +78,9 @@ public class CIS129_KristinBrooks_Game {
         System.out.println("Congratulations! Player " + currentPlayer + " has won the game!!!");
     }
 
+    // sets the board at the start of the game
     private void initBoard() {
         boardData.shuffleWitches();
-        // hide the witches
         boardData.hideAllWitches();
     }
 }

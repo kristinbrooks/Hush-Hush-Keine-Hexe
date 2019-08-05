@@ -3,6 +3,8 @@
  * CIS129
  * Final Project
  * Due: 8/5/19
+ *
+ * This class runs the player's turn.
  **************************************************************/
 
 import java.io.BufferedReader;
@@ -22,6 +24,7 @@ public class CIS129_KristinBrooks_Turn {
     }
 
     // METHODS
+    // the player's turn
     public Boolean take(int currentPlayer) {
         System.out.println("Current player is: " + currentPlayer);
         String roll = rollDie();
@@ -34,6 +37,7 @@ public class CIS129_KristinBrooks_Turn {
         }
     }
 
+    // the turn when a color is rolled
     private Boolean guessTurn(String roll) {
         // create input streams
         InputStreamReader input = new InputStreamReader(System.in);
@@ -44,6 +48,7 @@ public class CIS129_KristinBrooks_Turn {
 
             System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
             String columnNum = reader.readLine();
+            // allows me to cheat to see the board while testing the game
             if (showBoardCheat(columnNum)) {
                 System.out.println("Winners never cheat and cheaters never win.");
                 return true;
@@ -70,11 +75,13 @@ public class CIS129_KristinBrooks_Turn {
         return playerGoesAgain;
     }
 
+    // checks that they entered a number between 1 and 5
     private boolean isColumnNumValid(String columnNum) {
         String regexPattern = "[1-5]";
         return columnNum.matches(regexPattern);
     }
 
+    // the turn when a shuffle is rolled
     private void shuffleTurn(String roll) {
         // create input streams
         InputStreamReader input = new InputStreamReader(System.in);
@@ -109,17 +116,19 @@ public class CIS129_KristinBrooks_Turn {
         }
     }
 
+    // check they entered valid inputs
     private boolean isLocationValid(String locations) {
         String regexPattern = "\\d,\\d";
         return locations.matches(regexPattern);
     }
 
+    // check the user entered y or n
     private Boolean isShuffleAgainInputValid(String answer) {
         return (answer.compareToIgnoreCase("y") == 0 || answer.compareToIgnoreCase("n") == 0);
     }
 
+    // rolls the die for the game
     private String rollDie() {
-        // array with sides of the die
         String[] sides = {"B", "G", "Y", "R", "O", "S"};
         // create instance of random number generator
         Random random = new Random();
@@ -127,6 +136,7 @@ public class CIS129_KristinBrooks_Turn {
         return sides[randomNum];
     }
 
+    // cheat to show the witches while testing the game
     private boolean showBoardCheat(String input) {
         if (input.equals("cheat")) {
             boardData.showAllWitches();
