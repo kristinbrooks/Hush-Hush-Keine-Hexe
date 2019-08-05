@@ -45,6 +45,7 @@ public class CIS129_KristinBrooks_Turn {
             System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
             String columnNum = reader.readLine();
             if (showBoardCheat(columnNum)) {
+                System.out.println("Winners never cheat and cheaters never win.");
                 return true;
             }
             while (!isColumnNumValid(columnNum)) {
