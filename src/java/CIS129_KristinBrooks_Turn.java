@@ -39,18 +39,36 @@ public class CIS129_KristinBrooks_Turn {
         BufferedReader reader = new BufferedReader(input);
 
         try {
-            System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
-            int column = Integer.parseInt(reader.readLine());
-            boardData.showWitch(column);
-            board.display();
-            boardData.hideWitch(column);
-            Boolean witchDoesMatch = boardData.doesWitchMatch(roll, column);
-            if (witchDoesMatch) {
-                boardData.moveWitch(column);
+            Boolean witchDoesMatch = true;
+            while (witchDoesMatch) {
+                System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
+                String columnNum = reader.readLine();
+                while (!isColumnNumValid(columnNum)) {
+                    System.out.print("Invalid input. Please enter a column number from 1-5: ");
+                    columnNum = reader.readLine();
+                }
+                int column = Integer.parseInt(columnNum);
+                boardData.showWitch(column);
+                board.display();
+                boardData.hideWitch(column);
+                witchDoesMatch = boardData.doesWitchMatch(roll, column);
+                if (witchDoesMatch) {
+                    System.out.println("Your guess was a match, so your turn continues.");
+                    boardData.moveWitch(column);
+                    board.display();
+                    roll = rollDie();
+                } else {
+                    System.out.println("It was not a match. Your turn is over.");
+                }
             }
         } catch (IOException e) {
             System.out.println("Error reading from user.");
         }
+    }
+
+    private boolean isColumnNumValid(String columnNum) {
+        String regexPattern = "[1-5]";
+        return columnNum.matches(regexPattern);
     }
 
     private void shuffleTurn(String roll) {
