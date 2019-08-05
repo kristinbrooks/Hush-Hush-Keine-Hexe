@@ -22,7 +22,8 @@ public class CIS129_KristinBrooks_Turn {
     }
 
     // METHODS
-    public Boolean take() {
+    public Boolean take(int currentPlayer) {
+        System.out.println("Current player is: " + currentPlayer);
         String roll = rollDie();
 
         if (roll.equals("S")) {
@@ -55,7 +56,6 @@ public class CIS129_KristinBrooks_Turn {
             if (playerGoesAgain) {
                 boardData.moveWitch(column);
                 System.out.println("Your guess was a match.");
-                board.display();
             } else {
                 System.out.println("It was not a match. Your turn is over.");
             }
@@ -121,6 +121,5 @@ public class CIS129_KristinBrooks_Turn {
         Random random = new Random();
         int randomNum = random.nextInt(6);
         return sides[randomNum];
-//        return "R";
     }
 }
