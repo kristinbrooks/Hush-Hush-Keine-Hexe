@@ -18,9 +18,18 @@ public class CIS129_KristinBrooks_Game {
 
         CIS129_KristinBrooks_Turn turn = new CIS129_KristinBrooks_Turn(boardData);
 
-        boolean keepGoing = true;
-        while (keepGoing) {
-            turn.take();
+        boolean wonGame = false;
+
+        while (!wonGame) {
+            boolean playerGetsATurn = true;
+            while (playerGetsATurn && !wonGame) {
+                playerGetsATurn = turn.take();
+                board.display();
+                wonGame = boardData.didWinGame();
+            }
+            if (wonGame) {
+                System.out.println("Congratulations! You have won the game!!!");
+            }
         }
 
         System.out.println("The game has ended.");

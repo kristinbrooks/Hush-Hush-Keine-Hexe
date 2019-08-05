@@ -22,48 +22,48 @@ public class CIS129_KristinBrooks_Turn {
     }
 
     // METHODS
-    public void take() {
+    public Boolean take() {
         String roll = rollDie();
 
         if (roll.equals("S")) {
             shuffleTurn(roll);
+            return false;
         } else {
-            guessTurn(roll);
+            return guessTurn(roll);
         }
-        board.display();
     }
 
-    private void guessTurn(String roll) {
+    private Boolean guessTurn(String roll) {
         // create input streams
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader reader = new BufferedReader(input);
 
+        Boolean playerGoesAgain = true;
         try {
-            Boolean witchDoesMatch = true;
-            while (witchDoesMatch) {
-                System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
-                String columnNum = reader.readLine();
-                while (!isColumnNumValid(columnNum)) {
-                    System.out.print("Invalid input. Please enter a column number from 1-5: ");
-                    columnNum = reader.readLine();
-                }
-                int column = Integer.parseInt(columnNum);
-                boardData.showWitch(column);
-                board.display();
-                boardData.hideWitch(column);
-                witchDoesMatch = boardData.doesWitchMatch(roll, column);
-                if (witchDoesMatch) {
-                    System.out.println("Your guess was a match, so your turn continues.");
-                    boardData.moveWitch(column);
-                    board.display();
-                    roll = rollDie();
-                } else {
-                    System.out.println("It was not a match. Your turn is over.");
-                }
+
+            System.out.print("You rolled " + roll + ". Enter the column 'c' of the witch you would like to guess: ");
+            String columnNum = reader.readLine();
+            while (!isColumnNumValid(columnNum)) {
+                System.out.print("Invalid input. Please enter a column number from 1-5: ");
+                columnNum = reader.readLine();
             }
+            int column = Integer.parseInt(columnNum);
+            boardData.showWitch(column);
+            board.display();
+            boardData.hideWitch(column);
+            playerGoesAgain = boardData.doesWitchMatch(roll, column);
+            if (playerGoesAgain) {
+                boardData.moveWitch(column);
+                System.out.println("Your guess was a match.");
+                board.display();
+            } else {
+                System.out.println("It was not a match. Your turn is over.");
+            }
+
         } catch (IOException e) {
             System.out.println("Error reading from user.");
         }
+        return playerGoesAgain;
     }
 
     private boolean isColumnNumValid(String columnNum) {
@@ -119,6 +119,8 @@ public class CIS129_KristinBrooks_Turn {
         String[] sides = {"B", "G", "Y", "R", "O", "S"};
         // create instance of random number generator
         Random random = new Random();
-        return sides[random.nextInt(6)];
+        int randomNum = random.nextInt(6);
+        return sides[randomNum];
+//        return "R";
     }
 }

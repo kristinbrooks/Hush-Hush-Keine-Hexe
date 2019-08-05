@@ -22,6 +22,7 @@ public class CIS129_KristinBrooks_BoardData {
         CIS129_KristinBrooks_Witch[] rowData = {witch0, witch1, witch2, witch3, witch4};
 
         data[0] = rowData;
+//        data[3] = rowData;
     }
 
     // METHODS
@@ -74,5 +75,14 @@ public class CIS129_KristinBrooks_BoardData {
         }
         data[witchesCurrentRowIndex + 1][columnIndex] = data[witchesCurrentRowIndex][columnIndex];
         data[witchesCurrentRowIndex][columnIndex] = null;
+    }
+
+    public Boolean didWinGame() {
+        for (int i = 0; i < witches.length; i++) {
+            if (data[4][i] != null) {
+                return true;
+            }
+        }
+        return false;
     }
 }
