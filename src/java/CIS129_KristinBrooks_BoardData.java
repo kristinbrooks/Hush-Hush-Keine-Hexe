@@ -1,11 +1,11 @@
-import java.util.Random;
-
 /***************************************************************
  * Kristin Brooks
  * CIS129
  * Final Project
  * Due: 8/5/19
  **************************************************************/
+
+import java.util.Random;
 
 public class CIS129_KristinBrooks_BoardData {
     // field declarations

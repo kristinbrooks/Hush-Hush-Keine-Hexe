@@ -1,13 +1,13 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 /***************************************************************
  * Kristin Brooks
  * CIS129
  * Final Project
  * Due: 8/5/19
  **************************************************************/
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class CIS129_KristinBrooks_Game {
     // field declarations

@@ -12,7 +12,6 @@ public class CIS129_KristinBrooks_FP {
     public static void main(String[] args) {
         CIS129_KristinBrooks_Game game = new CIS129_KristinBrooks_Game();
 
-
         game.play();
     }
 }
